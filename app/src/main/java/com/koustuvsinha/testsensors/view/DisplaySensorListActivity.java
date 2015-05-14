@@ -8,9 +8,11 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.crashlytics.android.Crashlytics;
 import com.koustuvsinha.testsensors.R;
 import com.koustuvsinha.testsensors.sensors.SensorManagement;
 
+import io.fabric.sdk.android.Fabric;
 import java.util.List;
 
 public class DisplaySensorListActivity extends ActionBarActivity {
@@ -18,6 +20,7 @@ public class DisplaySensorListActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_display_sensor_list);
 
         final ListView listview = (ListView) findViewById(R.id.listview);

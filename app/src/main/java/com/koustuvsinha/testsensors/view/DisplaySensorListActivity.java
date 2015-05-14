@@ -24,8 +24,8 @@ public class DisplaySensorListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_display_sensor_list);
 
         final ListView listview = (ListView) findViewById(R.id.listview);
-        List<Sensor> sensorList = new SensorManagement().getAllAvailableSensors();
-        ArrayAdapter<Sensor> sensorAdapter = new ArrayAdapter<Sensor>(this,R.layout.activity_display_sensor_list,sensorList);
+        List<Sensor> sensorList = new SensorManagement().getAllAvailableSensors(this);
+        ArrayAdapter<Sensor> sensorAdapter = new ArrayAdapter<Sensor>(this,R.layout.simple_list_item,sensorList);
         listview.setAdapter(sensorAdapter);
     }
 

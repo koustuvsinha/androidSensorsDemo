@@ -1,5 +1,6 @@
 package com.koustuvsinha.testsensors.sensors;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 
@@ -15,8 +16,9 @@ public class SensorManagement {
      * getAllAvailableSensors
      * @return list of sensors
      */
-    public List<Sensor> getAllAvailableSensors() {
+    public List<Sensor> getAllAvailableSensors(Context mContext) {
         List<Sensor> sensors;
+        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         sensors = mSensorManager.getSensorList(Sensor.TYPE_ALL);
         return sensors;
     }

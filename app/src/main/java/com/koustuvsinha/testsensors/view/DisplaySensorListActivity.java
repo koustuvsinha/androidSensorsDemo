@@ -1,11 +1,17 @@
 package com.koustuvsinha.testsensors.view;
 
+import android.hardware.Sensor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.koustuvsinha.testsensors.R;
+import com.koustuvsinha.testsensors.sensors.SensorManagement;
+
+import java.util.List;
 
 public class DisplaySensorListActivity extends ActionBarActivity {
 
@@ -13,6 +19,11 @@ public class DisplaySensorListActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_sensor_list);
+
+        final ListView listview = (ListView) findViewById(R.id.listview);
+        List<Sensor> sensorList = new SensorManagement().getAllAvailableSensors();
+        ArrayAdapter<Sensor> sensorAdapter = new ArrayAdapter<Sensor>(this,R.layout.activity_display_sensor_list,sensorList);
+        listview.setAdapter(sensorAdapter);
     }
 
     @Override

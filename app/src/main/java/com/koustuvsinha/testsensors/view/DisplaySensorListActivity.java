@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.crashlytics.android.Crashlytics;
 import com.koustuvsinha.testsensors.R;
+import com.koustuvsinha.testsensors.adapters.SensorAdapter;
 import com.koustuvsinha.testsensors.sensors.SensorManagement;
 
 import io.fabric.sdk.android.Fabric;
@@ -25,7 +26,7 @@ public class DisplaySensorListActivity extends ActionBarActivity {
 
         final ListView listview = (ListView) findViewById(R.id.listview);
         List<Sensor> sensorList = new SensorManagement().getAllAvailableSensors(this);
-        ArrayAdapter<Sensor> sensorAdapter = new ArrayAdapter<Sensor>(this,R.layout.simple_list_item,sensorList);
+        SensorAdapter sensorAdapter = new SensorAdapter(this,sensorList);
         listview.setAdapter(sensorAdapter);
     }
 

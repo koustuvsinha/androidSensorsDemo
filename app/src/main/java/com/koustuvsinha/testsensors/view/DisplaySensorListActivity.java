@@ -1,22 +1,30 @@
 package com.koustuvsinha.testsensors.view;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.koustuvsinha.testsensors.R;
 import com.koustuvsinha.testsensors.adapters.SensorAdapter;
 import com.koustuvsinha.testsensors.sensors.SensorManagement;
+import com.koustuvsinha.testsensors.utils.Constants;
 
 import io.fabric.sdk.android.Fabric;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class DisplaySensorListActivity extends ActionBarActivity {
+public class DisplaySensorListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +33,19 @@ public class DisplaySensorListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_display_sensor_list);
 
         final ListView listview = (ListView) findViewById(R.id.listview);
-        List<Sensor> sensorList = new SensorManagement().getAllAvailableSensors(this);
+        final List<Sensor> sensorList = new SensorManagement(this).getAllAvailableSensors();
         SensorAdapter sensorAdapter = new SensorAdapter(this,sensorList);
         listview.setAdapter(sensorAdapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(),"Clicked " + i,Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DisplaySensorListActivity.this,DisplayRawSensorDataActivity.class);
+                intent.putExtra(Constants.SELECTED_SENSOR,sensorList.get(i).getType());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -12,14 +12,26 @@ import java.util.List;
 public class SensorManagement {
     private SensorManager mSensorManager;
 
+    public SensorManagement(Context mContext) {
+        this.mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+    }
+
     /**
      * getAllAvailableSensors
      * @return list of sensors
      */
-    public List<Sensor> getAllAvailableSensors(Context mContext) {
+    public List<Sensor> getAllAvailableSensors() {
         List<Sensor> sensors;
-        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         sensors = mSensorManager.getSensorList(Sensor.TYPE_ALL);
         return sensors;
+    }
+
+    /**
+     * return selected sensor type
+     * @param sensorType
+     * @return
+     */
+    public Sensor getSensorByType(int sensorType) {
+        return mSensorManager.getDefaultSensor(sensorType);
     }
 }

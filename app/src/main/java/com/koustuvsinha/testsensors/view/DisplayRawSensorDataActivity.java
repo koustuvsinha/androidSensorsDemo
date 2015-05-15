@@ -1,18 +1,30 @@
 package com.koustuvsinha.testsensors.view;
 
+import android.app.Activity;
+import android.hardware.Sensor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.koustuvsinha.testsensors.R;
+import com.koustuvsinha.testsensors.sensors.SensorManagement;
+import com.koustuvsinha.testsensors.utils.Constants;
 
-public class DisplayRawSensorDataActivity extends ActionBarActivity {
+public class DisplayRawSensorDataActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_raw_sensor_data);
+
+        SensorManagement sensorManagement = new SensorManagement(this);
+        Sensor sensor =  sensorManagement.getSensorByType(getIntent().getIntExtra(Constants.SELECTED_SENSOR,0));
+        TextView detailsTextView = (TextView)findViewById(R.id.sensorDetails);
+        detailsTextView.setText(sensor.getName());
     }
 
     @Override

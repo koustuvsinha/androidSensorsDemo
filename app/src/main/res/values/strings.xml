@@ -3,6 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_display_sensor_list">DisplaySensorListActivity</string>
+    <string name="title_activity_display_sensor_list">Display Available Sensors</string>
     <string name="title_activity_display_raw_sensor_data">DisplayRawSensorDataActivity</string>
 </resources>

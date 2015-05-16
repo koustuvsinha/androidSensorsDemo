@@ -28,6 +28,8 @@ public class SensorAdapter extends ArrayAdapter<Sensor> {
         }
         TextView sensorName = (TextView)convertView.findViewById(R.id.sensorName);
         sensorName.setText(mSensor.getName());
+        TextView sensorVendor = (TextView)convertView.findViewById(R.id.sensorVendor);
+        sensorVendor.setText(mSensor.getVendor());
         return convertView;
     }
 }

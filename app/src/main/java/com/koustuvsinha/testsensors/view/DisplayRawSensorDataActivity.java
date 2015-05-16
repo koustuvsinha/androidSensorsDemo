@@ -38,6 +38,8 @@ public class DisplayRawSensorDataActivity extends Activity implements SensorEven
         mSensorManager = sensorManagement.getSensorManager();
         TextView detailsTextView = (TextView)findViewById(R.id.sensorDetailsName);
         detailsTextView.setText(mSensor.getName());
+        TextView detailsVendorView = (TextView)findViewById(R.id.sensorVendor);
+        detailsVendorView.setText(mSensor.getVendor());
         //detailsDataValuesView = (TextView)findViewById(R.id.sensorDetailsValues);
         detailsData1View = (TextView)findViewById(R.id.sensorDetailsData1);
         detailsData2View = (TextView)findViewById(R.id.sensorDetailsData2);

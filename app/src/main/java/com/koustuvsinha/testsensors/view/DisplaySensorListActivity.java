@@ -44,7 +44,7 @@ public class DisplaySensorListActivity extends Activity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         final List<Sensor> sensorList = new SensorManagement(this).getAllAvailableSensors();
-        mAdapter = new SensorAdapter(sensorList);
+        mAdapter = new SensorAdapter(this,sensorList);
         mRecyclerView.setAdapter(mAdapter);
 
         mRecyclerView.addOnItemTouchListener(

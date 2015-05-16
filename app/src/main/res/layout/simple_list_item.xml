@@ -29,9 +29,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sensorName"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:gravity="right"
+            android:gravity="left"
             android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
 
+        <ImageView
+            android:id="@+id/sensorIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingTop="15dp"
+            android:src="@drawable/ic_cellphone_iphone_black_48dp"
+            android:layout_alignRight="@id/sensorName"/>
+
     </RelativeLayout>
-    
+
 </android.support.v7.widget.CardView>

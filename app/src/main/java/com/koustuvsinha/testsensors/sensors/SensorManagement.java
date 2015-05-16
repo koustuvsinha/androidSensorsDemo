@@ -34,4 +34,8 @@ public class SensorManagement {
     public Sensor getSensorByType(int sensorType) {
         return mSensorManager.getDefaultSensor(sensorType);
     }
+
+    public SensorManager getSensorManager() {
+        return mSensorManager;
+    }
 }

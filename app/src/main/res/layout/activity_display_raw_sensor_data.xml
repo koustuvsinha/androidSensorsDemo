@@ -19,7 +19,8 @@
             android:layout_height="match_parent"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:paddingTop="16dp">
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
 
             <TextView
                 android:id="@+id/sensorDetailsName"
@@ -59,13 +60,82 @@
                 android:layout_below="@id/sensorVendor"/>
 
             <TextView
+                android:id="@+id/maxLabel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max : "
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData1"/>
+            <TextView
+                android:id="@+id/maxData1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData1"
+                android:layout_alignRight="@id/maxLabel1"/>
+
+            <TextView
+                android:id="@+id/minLabel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min : "
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel1"/>
+            <TextView
+                android:id="@+id/minData1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel1"
+                android:layout_alignRight="@id/minLabel1"/>
+
+            <TextView
                 android:id="@+id/sensorDetailsData2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0.00"
                 android:textSize="55dp"
                 android:gravity="right"
-                android:layout_below="@id/sensorDetailsData1"/>
+                android:layout_below="@id/minData1"/>
+
+            <TextView
+                android:id="@+id/maxLabel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max : "
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData2"/>
+            <TextView
+                android:id="@+id/maxData2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData2"
+                android:layout_alignRight="@id/maxLabel2"/>
+
+            <TextView
+                android:id="@+id/minLabel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min : "
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel2"/>
+            <TextView
+                android:id="@+id/minData2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel2"
+                android:layout_alignRight="@id/minLabel2"/>
+
             <TextView
                 android:id="@+id/sensorDetailsData3"
                 android:layout_width="match_parent"
@@ -73,7 +143,41 @@
                 android:text="0.00"
                 android:textSize="55dp"
                 android:gravity="right"
-                android:layout_below="@id/sensorDetailsData2"/>
+                android:layout_below="@id/minData2"/>
+
+            <TextView
+                android:id="@+id/maxLabel3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max : "
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData3"/>
+            <TextView
+                android:id="@+id/maxData3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData3"
+                android:layout_alignRight="@id/maxLabel3"/>
+
+            <TextView
+                android:id="@+id/minLabel3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min : "
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel3"/>
+            <TextView
+                android:id="@+id/minData3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel3"
+                android:layout_alignRight="@id/minLabel3"/>
 
         </RelativeLayout>
 

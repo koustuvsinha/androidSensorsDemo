@@ -59,6 +59,9 @@ public class DisplayRawSensorDataActivity extends Activity implements SensorEven
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_raw_sensor_data);
 
+        // create realm instance
+        realm = Realm.getInstance(this);
+
         SensorManagement sensorManagement = new SensorManagement(this);
         mSensor =  sensorManagement.getSensorByType(getIntent().getIntExtra(Constants.SELECTED_SENSOR,0));
         mSensorManager = sensorManagement.getSensorManager();
@@ -168,7 +171,6 @@ public class DisplayRawSensorDataActivity extends Activity implements SensorEven
     protected void onResume() {
         super.onResume();
         mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        realm = Realm.getInstance(this);
         RealmQuery<SensorModel> query = realm.where(SensorModel.class);
         // convert today's date in String
         String todayDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
@@ -178,7 +180,7 @@ public class DisplayRawSensorDataActivity extends Activity implements SensorEven
         if(result.size() > 0) {
             sensorModel =  result.get(0);
 
-            Log.i("APP","Record found, loading the record");
+            Log.i(Constants.TAG_NAME,"Record found, loading the record");
 
             sensorMax1 = sensorModel.getSensorMax1();
             sensorMax2 = sensorModel.getSensorMax2();
@@ -189,7 +191,7 @@ public class DisplayRawSensorDataActivity extends Activity implements SensorEven
 
         } else {
             sensorModel = new SensorModel();
-            Log.i("APP","Record not found, intializing the record");
+            Log.i(Constants.TAG_NAME,"Record not found, intializing the record");
             isFirst = true;
         }
 
@@ -212,9 +214,19 @@ public class DisplayRawSensorDataActivity extends Activity implements SensorEven
         realmSensorModel.setSensorMin2(sensorMin2);
         realmSensorModel.setSensorMin3(sensorMin3);
         realm.commitTransaction();
-        Log.i("APP","Record stored");
+        Log.i(Constants.TAG_NAME,"Record stored");
 
         mSensorManager.unregisterListener(this);
-        Log.i("APP","Unregistered sensor listener");
+        Log.i(Constants.TAG_NAME,"Unregistered sensor listener");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(realm!=null) {
+            realm.close();
+            Log.i(Constants.TAG_NAME,"Closed realm db");
+        }
     }
 }

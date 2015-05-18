@@ -5,4 +5,5 @@ package com.koustuvsinha.testsensors.utils;
  */
 public class Constants {
     public static String SELECTED_SENSOR = "sensor";
+    public static String TAG_NAME = "iSensor";
 }

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.koustuvsinha.testsensors" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,10 +22,11 @@
             android:name=".view.DisplayRawSensorDataActivity"
             android:label="@string/title_activity_display_raw_sensor_data" >
         </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="46bc9d79d134d135a207ce90633921b296ced28d" />
+
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

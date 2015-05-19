@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.koustuvsinha.testsensors.view.DisplayRawSensorDataActivity">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/sensorDetailsName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/sensorVendorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vendor : "
+                android:textSize="25dp"
+                android:layout_below="@id/sensorDetailsName"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/sensorVendor"/>
+
+            <TextView
+                android:id="@id/sensorVendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Motorola"
+                android:textSize="25dp"
+                android:layout_below="@id/sensorDetailsName"
+                android:layout_alignParentRight="true"
+                android:gravity="right"/>
+
+
+            <TextView
+                android:id="@+id/sensorDetailsData1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="55dp"
+                android:gravity="right"
+                android:layout_below="@id/sensorVendor"/>
+
+            <TextView
+                android:id="@+id/maxLabel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max : "
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData1"/>
+            <TextView
+                android:id="@+id/maxData1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData1"
+                android:layout_alignRight="@id/maxLabel1"/>
+
+            <TextView
+                android:id="@+id/minLabel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min : "
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel1"/>
+            <TextView
+                android:id="@+id/minData1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel1"
+                android:layout_alignRight="@id/minLabel1"/>
+
+            <TextView
+                android:id="@+id/sensorDetailsData2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="55dp"
+                android:gravity="right"
+                android:layout_below="@id/minData1"/>
+
+            <TextView
+                android:id="@+id/maxLabel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max : "
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData2"/>
+            <TextView
+                android:id="@+id/maxData2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData2"
+                android:layout_alignRight="@id/maxLabel2"/>
+
+            <TextView
+                android:id="@+id/minLabel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min : "
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel2"/>
+            <TextView
+                android:id="@+id/minData2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel2"
+                android:layout_alignRight="@id/minLabel2"/>
+
+            <TextView
+                android:id="@+id/sensorDetailsData3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="55dp"
+                android:gravity="right"
+                android:layout_below="@id/minData2"/>
+
+            <TextView
+                android:id="@+id/maxLabel3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Max : "
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData3"/>
+            <TextView
+                android:id="@+id/maxData3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/sensorDetailsData3"
+                android:layout_alignRight="@id/maxLabel3"/>
+
+            <TextView
+                android:id="@+id/minLabel3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min : "
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel3"/>
+            <TextView
+                android:id="@+id/minData3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:textSize="15dp"
+                android:layout_below="@id/maxLabel3"
+                android:layout_alignRight="@id/minLabel3"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

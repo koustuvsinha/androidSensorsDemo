@@ -52,7 +52,7 @@ public class DisplayRawSensorDataActivity extends FragmentActivity implements Di
 
         ArrayList<Fragment> fragments = new ArrayList<Fragment>();
         fragments.add(DisplayRawSensorData.newInstance(getIntent().getIntExtra(Constants.SELECTED_SENSOR,0)));
-        fragments.add(DisplaySensorHistoryData.newInstance());
+        fragments.add(DisplaySensorHistoryData.newInstance(getIntent().getIntExtra(Constants.SELECTED_SENSOR,0)));
 
         viewPager.setAdapter(new ViewerPagerAdapter(getSupportFragmentManager(), fragments));
     }

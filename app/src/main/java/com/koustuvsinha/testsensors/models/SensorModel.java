@@ -1,5 +1,6 @@
 package com.koustuvsinha.testsensors.models;
 
+import java.security.Timestamp;
 import java.util.Date;
 import java.util.UUID;
 
@@ -23,8 +24,11 @@ public class SensorModel extends RealmObject {
     private float sensorMax3;
     private float sensorMin3;
 
+    private long timestamp;
+
     public SensorModel() {
         this.id = UUID.randomUUID().toString();
+        this.timestamp = System.currentTimeMillis();
     }
 
     public String getId() {
@@ -97,5 +101,13 @@ public class SensorModel extends RealmObject {
 
     public void setSensorMin3(float sensorMin3) {
         this.sensorMin3 = sensorMin3;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
     }
 }

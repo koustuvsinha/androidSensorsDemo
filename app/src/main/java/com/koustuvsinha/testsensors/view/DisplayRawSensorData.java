@@ -189,19 +189,23 @@ public class DisplayRawSensorData extends Fragment implements SensorEventListene
         //support arrays yet
 
         if(isFirst) {
+            // if first instance store min as the value
             sensorMax1 = sensorMin1 = event.values[0];
-            sensorMax2 = sensorMin1 = event.values[1];
-            sensorMax3 = sensorMin1 = event.values[2];
+            sensorMax2 = sensorMin2 = event.values[1];
+            sensorMax3 = sensorMin3 = event.values[2];
+
             isFirst = false;
+
+        } else {
+
+            sensorMax1 = sensorMax1 > event.values[0] ? sensorMax1 : event.values[0];
+            sensorMax2 = sensorMax2 > event.values[1] ? sensorMax2 : event.values[1];
+            sensorMax3 = sensorMax3 > event.values[2] ? sensorMax3 : event.values[2];
+            sensorMin1 = sensorMin1 < event.values[0] ? sensorMin1 : event.values[0];
+            sensorMin2 = sensorMin2 < event.values[1] ? sensorMin2 : event.values[1];
+            sensorMin3 = sensorMin3 < event.values[2] ? sensorMin3 : event.values[2];
+
         }
-
-        sensorMax1 = sensorMax1 > event.values[0] ? sensorMax1 : event.values[0];
-        sensorMax2 = sensorMax2 > event.values[1] ? sensorMax2 : event.values[1];
-        sensorMax3 = sensorMax3 > event.values[2] ? sensorMax3 : event.values[2];
-        sensorMin1 = sensorMin1 < event.values[0] ? sensorMin1 : event.values[0];
-        sensorMin2 = sensorMin2 < event.values[1] ? sensorMin2 : event.values[1];
-        sensorMin3 = sensorMin3 < event.values[2] ? sensorMin3 : event.values[2];
-
 
         if(len == 3) {
             detailsData1View.setText(Float.toString(event.values[0]));

@@ -3,16 +3,12 @@ package com.koustuvsinha.testsensors.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.hardware.Sensor;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
@@ -24,7 +20,6 @@ import com.koustuvsinha.testsensors.utils.Constants;
 
 import io.fabric.sdk.android.Fabric;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class DisplaySensorListActivity extends Activity {

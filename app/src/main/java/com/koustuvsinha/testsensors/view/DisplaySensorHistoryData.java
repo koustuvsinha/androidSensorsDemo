@@ -12,14 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.koustuvsinha.testsensors.R;
-import com.koustuvsinha.testsensors.adapters.SensorAdapter;
 import com.koustuvsinha.testsensors.adapters.SensorRecordsAdapter;
 import com.koustuvsinha.testsensors.models.SensorModel;
 import com.koustuvsinha.testsensors.utils.Constants;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import io.realm.Realm;

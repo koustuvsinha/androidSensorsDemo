@@ -18,7 +18,6 @@ import com.koustuvsinha.testsensors.R;
 import com.koustuvsinha.testsensors.models.SensorModel;
 import com.koustuvsinha.testsensors.sensors.SensorManagement;
 import com.koustuvsinha.testsensors.utils.Constants;
-import com.koustuvsinha.testsensors.utils.DBUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -94,7 +93,7 @@ public class DisplayRawSensorData extends Fragment implements SensorEventListene
         mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
         RealmQuery<SensorModel> query = realm.where(SensorModel.class);
         // convert today's date in String
-        String todayDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        String todayDate = new SimpleDateFormat(Constants.DATE_FORMAT).format(Calendar.getInstance().getTime());
         query.equalTo("recordDate",todayDate);
         query.equalTo("sensorType",mSensor.getType());
         RealmResults<SensorModel> result = query.findAll();
@@ -135,11 +134,9 @@ public class DisplayRawSensorData extends Fragment implements SensorEventListene
         detailsTextView.setText(mSensor.getName());
         TextView detailsVendorView = (TextView)v.findViewById(R.id.sensorVendor);
         detailsVendorView.setText(mSensor.getVendor());
-        //detailsDataValuesView = (TextView)findViewById(R.id.sensorDetailsValues);
         detailsData1View = (TextView)v.findViewById(R.id.sensorDetailsData1);
         detailsData2View = (TextView)v.findViewById(R.id.sensorDetailsData2);
         detailsData3View = (TextView)v.findViewById(R.id.sensorDetailsData3);
-        //detailsDataView.setText('0');
         detailsData1MaxView = (TextView)v.findViewById(R.id.maxData1);
         detailsData2MaxView = (TextView)v.findViewById(R.id.maxData2);
         detailsData3MaxView = (TextView)v.findViewById(R.id.maxData3);
@@ -272,7 +269,7 @@ public class DisplayRawSensorData extends Fragment implements SensorEventListene
         realm = Realm.getInstance(getActivity());
         realm.beginTransaction();
         SensorModel realmSensorModel = realm.copyToRealm(sensorModel);
-        String todayDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        String todayDate = new SimpleDateFormat(Constants.DATE_FORMAT).format(Calendar.getInstance().getTime());
         realmSensorModel.setRecordDate(todayDate);
         realmSensorModel.setSensorType(mSensor.getType());
         realmSensorModel.setSensorMax1(sensorMax1);

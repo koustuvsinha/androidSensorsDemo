@@ -1,39 +1,19 @@
 package com.koustuvsinha.testsensors.view;
 
-import android.app.Activity;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.koustuvsinha.testsensors.R;
 import com.koustuvsinha.testsensors.adapters.ViewerPagerAdapter;
-import com.koustuvsinha.testsensors.models.SensorModel;
-import com.koustuvsinha.testsensors.sensors.SensorManagement;
 import com.koustuvsinha.testsensors.utils.Constants;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-
-import io.realm.Realm;
-import io.realm.RealmList;
-import io.realm.RealmQuery;
-import io.realm.RealmResults;
 
 public class DisplayRawSensorDataActivity extends FragmentActivity implements DisplayRawSensorData.OnFragmentInteractionListener,DisplaySensorHistoryData.OnFragmentInteractionListener {
 
